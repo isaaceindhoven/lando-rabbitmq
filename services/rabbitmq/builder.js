@@ -27,8 +27,6 @@ module.exports = {
         constructor(id, options = {}) {
             options = {...config, ...options};
 
-            console.log(options);
-
             const image =  `rabbitmq:${options.version}${options.management ? '-management' : ''}${options.alpine ? '-alpine' : ''}`;
             const ports = ['5672'];
             if (options.management) {
