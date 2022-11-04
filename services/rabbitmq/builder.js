@@ -3,7 +3,6 @@
 module.exports = {
     name: 'rabbitmq',
     config: {
-        version: '3.11',
         supported: [
             '3.9',
             '3.10',
@@ -27,6 +26,8 @@ module.exports = {
     builder: (parent, config) => class LandoRabbitmq extends parent {
         constructor(id, options = {}) {
             options = {...config, ...options};
+
+            console.log(options);
 
             const image =  `rabbitmq:${options.version}${options.management ? '-management' : ''}${options.alpine ? '-alpine' : ''}`;
             const ports = ['5672'];

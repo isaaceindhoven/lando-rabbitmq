@@ -61,10 +61,10 @@ After installing the plugin you can easily add the service to your Lando environ
 
 ### Configuration
 
-1. `version` - To specify which Rabbitmq version you want to install. Currently 3.9, 3.10 and 3.11 are supported. (Default: 3.11)
+1. `version` - To specify which Rabbitmq version you want to install. Currently 3.9, 3.10 and 3.11 are supported.
 2. `management` - To specify if you want to include the management dashboard of Rabbitmq. Can be true or false. (Default: true)
 3. `alpine` - Whether to use an Alpine image or a regular one. Can be true or false. (Default: true)
-
+4. `creds` - You can pass a `user` and `password` for the Rabbitmq instance. (Default user: 'user', Default password: 'user')
 
 ### Example
 
@@ -77,9 +77,12 @@ config:
 services:
   rabbitmq:
     type: rabbitmq
-    version: '3.9'
+    version: '3.11'
     management: true
     alpine: false
+    creds:
+      user: landorabbitmq
+      password: my-super-secret-password
 
 # You can use the proxy to view the Management panel using a proper url.
 proxy:
