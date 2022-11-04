@@ -10,7 +10,7 @@ Rabbitmq service for the [Lando](https://docs.lando.dev/) development environmen
 
 ### Manual
 
-1. Download the plugin [here](https://github.com/melvinversluijs/lando-rabbitmq/archive/refs/tags/0.1.0.zip)
+1. Download the plugin [here](https://github.com/melvinversluijs/lando-rabbitmq/archive/refs/tags/0.1.1.zip)
 2. Move the zip file to `~/.lando/plugins` (Create the directory if it does not yet exist).
 3. Unzip the file.
 
@@ -24,13 +24,13 @@ rm -rf ~/.lando/plugins/lando-rabbitmq
 mkdir -p ~/.lando/plugins
 
 # Download the plugin to /tmp.
-curl -L https://github.com/melvinversluijs/lando-rabbitmq/archive/refs/tags/0.1.0.tar.gz --output /tmp/lando-rabbitmq.tar.gz
+curl -L https://github.com/melvinversluijs/lando-rabbitmq/archive/refs/tags/0.1.1.tar.gz --output /tmp/lando-rabbitmq.tar.gz
 
 # Unzip the plugin.
 tar -xf /tmp/lando-rabbitmq.tar.gz --directory ~/.lando/plugins/
 
 # Move the plugin to the Lando plugins directory.
-mv ~/.lando/plugins/lando-rabbitmq-0.1.0 ~/.lando/plugins/lando_rabbitmq
+mv ~/.lando/plugins/lando-rabbitmq-0.1.1 ~/.lando/plugins/lando_rabbitmq
 
 # Remove the zip file.
 rm -rf /tmp/lando-rabbitmq.tar.gz
@@ -41,9 +41,9 @@ rm -rf /tmp/lando-rabbitmq.tar.gz
 ```bash
 rm -rf ~/.lando/plugins/lando-rabbitmq && \
 mkdir -p ~/.lando/plugins && \
-curl -L https://github.com/melvinversluijs/lando-rabbitmq/archive/refs/tags/0.1.0.tar.gz --output /tmp/lando-rabbitmq.tar.gz && \
+curl -L https://github.com/melvinversluijs/lando-rabbitmq/archive/refs/tags/0.1.1.tar.gz --output /tmp/lando-rabbitmq.tar.gz && \
 tar -xf /tmp/lando-rabbitmq.tar.gz --directory ~/.lando/plugins/ && \
-mv ~/.lando/plugins/lando-rabbitmq-0.1.0 ~/.lando/plugins/lando_rabbitmq && \
+mv ~/.lando/plugins/lando-rabbitmq-0.1.1 ~/.lando/plugins/lando_rabbitmq && \
 rm -rf /tmp/lando-rabbitmq.tar.gz
 ```
 
