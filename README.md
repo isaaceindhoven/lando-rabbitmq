@@ -8,25 +8,48 @@ Rabbitmq service for the [Lando](https://docs.lando.dev/) development environmen
 
 ## Installation
 
-
-### Bash
-```bash
-rm -rf ~/.lando/plugins/lando-rabbitmq && \
-mkdir -p ~/.lando/plugins && \
-curl https://github.com/melvinversluijs/lando-rabbitmq/archive/refs/tags/0.1.0.tar.gz -O /tmp/lando-rabbitmq.tar.gz && \ 
-tar -xf /tmp/lando-rabbitmq.tar.gz --directory ~/.lando/plugins/lando-rabbitmq && \
-rm -rf /tmp/lando-rabbitmq.tar.gz
-```
-
 ### Manual
 
-1. Download the plugin (here)[https://github.com/melvinversluijs/lando-rabbitmq/archive/refs/tags/0.1.0.zip]
+1. Download the plugin [here](https://github.com/melvinversluijs/lando-rabbitmq/archive/refs/tags/0.1.0.zip)
 2. Move the zip file to `~/.lando/plugins` (Create the directory if it does not yet exist).
 3. Unzip the file.
 
+### Bash
+
+```bash
+# Remove existing/old plugin.
+rm -rf ~/.lando/plugins/lando-rabbitmq
+
+# Make sure the plugins directory exists.
+mkdir -p ~/.lando/plugins
+
+# Download the plugin to /tmp.
+curl -L https://github.com/melvinversluijs/lando-rabbitmq/archive/refs/tags/0.1.0.tar.gz --output /tmp/lando-rabbitmq.tar.gz
+
+# Unzip the plugin.
+tar -xf /tmp/lando-rabbitmq.tar.gz --directory ~/.lando/plugins/
+
+# Move the plugin to the Lando plugins directory.
+mv ~/.lando/plugins/lando-rabbitmq-0.1.0 ~/.lando/plugins/lando_rabbitmq
+
+# Remove the zip file.
+rm -rf /tmp/lando-rabbitmq.tar.gz
+```
+
+### Bash oneliner
+
+```bash
+rm -rf ~/.lando/plugins/lando-rabbitmq && \
+mkdir -p ~/.lando/plugins && \
+curl -L https://github.com/melvinversluijs/lando-rabbitmq/archive/refs/tags/0.1.0.tar.gz --output /tmp/lando-rabbitmq.tar.gz && \
+tar -xf /tmp/lando-rabbitmq.tar.gz --directory ~/.lando/plugins/ && \
+mv ~/.lando/plugins/lando-rabbitmq-0.1.0 ~/.lando/plugins/lando_rabbitmq && \
+rm -rf /tmp/lando-rabbitmq.tar.gz
+```
+
 ### Rename the plugin after installation
 
-There is currently a (bug in Lando)[https://github.com/lando/lando/issues/3394] which prevents us from using a `-` in the plugin name. So you should temporarily rename the plugin to something like `lando_rabbitmq` or `landorabbitmq`.
+There is currently a [bug in Lando](https://github.com/lando/lando/issues/3394) which prevents us from using a `-` in the plugin name. So you should temporarily rename the plugin to something like `lando_rabbitmq` or `landorabbitmq`.
 
 ```bash
 mv ~/.lando/plugins/lando-rabbitmq ~/.lando/plugins/lando_rabbitmq
